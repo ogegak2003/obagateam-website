@@ -1,0 +1,43 @@
+# Multi-stage build for backend
+FROM node:18-alpine as backend-build
+
+WORKDIR /app
+
+# Copy package files
+COPY package*.json ./
+
+# Install dependencies
+RUN npm ci --only=production
+
+# Copy source code
+COPY . .
+
+# Production stage
+FROM node:18-alpine as backend-production
+
+WORKDIR /app
+
+# Install wget for health checks (more reliable than curl in Alpine)
+RUN apk add --no-cache wget
+
+# Create non-root user
+RUN addgroup -g 1001 -S nodejs
+RUN adduser -S nextjs -u 1001
+
+# Copy package files and built app
+COPY --from=backend-build --chown=nextjs:nodejs /app/package*.json ./
+COPY --from=backend-build --chown=nextjs:nodejs /app/node_modules ./node_modules
+COPY --from=backend-build --chown=nextjs:nodejs /app ./
+
+# Switch to non-root user
+USER nextjs
+
+# Expose port
+EXPOSE 3001
+
+# Health check using wget
+HEALTHCHECK --interval=30s --timeout=10s --start-period=40s --retries=3 \
+  CMD wget --no-verbose --tries=1 --spider http://localhost:3001/api/health || exit 1
+
+# Start the application
+CMD ["node", "server.js"]
