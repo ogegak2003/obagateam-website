@@ -33,13 +33,19 @@ jobs:
           frontend/package-lock.json
     
     - name: Install backend dependencies
-      run: cd backend && npm ci
+      run: |
+        cd backend
+        npm install
+        npm list
     
     - name: Run backend tests
       run: cd backend && npm test -- --passWithNoTests
     
     - name: Install frontend dependencies
-      run: cd frontend && npm ci
+      run: |
+        cd frontend
+        npm install
+        npm list react-leaflet leaflet
     
     - name: Run frontend tests
       run: cd frontend && npm test -- --passWithNoTests
@@ -65,20 +71,6 @@ jobs:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
     
-    - name: Extract metadata for Docker
-      id: meta
-      uses: docker/metadata-action@v5
-      with:
-        images: |
-          ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.BACKEND_IMAGE }}
-          ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.FRONTEND_IMAGE }}
-        tags: |
-          type=ref,event=branch
-          type=ref,event=pr
-          type=semver,pattern={{version}}
-          type=semver,pattern={{major}}.{{minor}}
-          type=sha,prefix={{branch}}-
-    
     - name: Build and push backend image
       uses: docker/build-push-action@v5
       with:
@@ -86,9 +78,10 @@ jobs:
         file: ./backend/Dockerfile.prod
         push: true
         tags: ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.BACKEND_IMAGE }}:latest,${{ secrets.DOCKERHUB_USERNAME }}/${{ env.BACKEND_IMAGE }}:${{ github.sha }}
-        labels: ${{ steps.meta.outputs.labels }}
         cache-from: type=gha
         cache-to: type=gha,mode=max
+        build-args: |
+          NODE_ENV=production
     
     - name: Build and push frontend image
       uses: docker/build-push-action@v5
@@ -97,7 +90,6 @@ jobs:
         file: ./frontend/Dockerfile.prod
         push: true
         tags: ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.FRONTEND_IMAGE }}:latest,${{ secrets.DOCKERHUB_USERNAME }}/${{ env.FRONTEND_IMAGE }}:${{ github.sha }}
-        labels: ${{ steps.meta.outputs.labels }}
         cache-from: type=gha
         cache-to: type=gha,mode=max
 
@@ -115,5 +107,4 @@ jobs:
         echo "🚀 Deployment would happen here"
         echo "Backend: ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.BACKEND_IMAGE }}:latest"
         echo "Frontend: ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.FRONTEND_IMAGE }}:latest"
-        # Add your actual deployment commands here
-        # For example: ssh deploy, kubectl, etc.
+        echo "📊 Images successfully built and pushed to Docker Hub"
