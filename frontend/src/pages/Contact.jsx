@@ -25,7 +25,7 @@ const Contact = () => {
       title: 'Email Us',
       description: 'Send us an email anytime',
       details: 'hello@obagaTeam.com',
-      link: 'mailto:hello@obagaTeam.com'
+      link: 'mailto:ogegak2003@gmail.com'
     },
     {
       icon: '📞',

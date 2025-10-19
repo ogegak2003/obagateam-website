@@ -6,7 +6,7 @@ const About = () => {
     {
       name: 'obaga kevin',
       role: 'CEO & Founder',
-      bio: '20+ years in technology leadership and digital transformation.',
+      bio: '8+ years in technology leadership and digital transformation.',
       image: '👨‍💼',
       social: { twitter: '#', linkedin: '#' }
     },
@@ -104,7 +104,7 @@ const About = () => {
               <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Story</h2>
               <div className="space-y-4 text-gray-600">
                 <p>
-                  Founded in 2020, obagaTeam began as a small group of technology enthusiasts with a shared vision: 
+                  Founded in 2023, obagaTeam began as a small group of technology enthusiasts with a shared vision: 
                   to make high-quality digital solutions accessible to businesses of all sizes.
                 </p>
                 <p>

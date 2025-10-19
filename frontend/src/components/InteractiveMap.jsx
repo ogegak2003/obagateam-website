@@ -46,8 +46,8 @@ const InteractiveMap = () => {
       id: 1,
       name: 'obagaTeam Headquarters',
       position: [-1.2864, 36.8172], // Nairobi, Kenya
-      address: '123 Innovation Drive, Nairobi, Kenya',
-      phone: '+254 ...', // You can add a specific number here
+      address: '46 , Nairobi, Kenya',
+      phone: '+254 748 312 468', // You can add a specific number here
       email: 'hq@obagaTeam.com'
     },
     {

@@ -69,11 +69,11 @@ const Footer = () => {
               </li>
               <li className="flex items-start space-x-3">
                 <span>📞</span>
-                <span>+1 (555) 123-OTTEAM</span>
+                <span>+254 748 312 468</span>
               </li>
               <li className="flex items-start space-x-3">
                 <span>🏢</span>
-                <span>123 Innovation Drive<br />Tech Valley, TV 12345</span>
+                <span>Nairobi, Kenya<br />Ngong Road</span>
               </li>
             </ul>
           </div>
