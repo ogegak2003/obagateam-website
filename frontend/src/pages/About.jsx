@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 const About = () => {
   const team = [
     {
-      name: 'Alex Johnson',
+      name: 'obaga kevin',
       role: 'CEO & Founder',
       bio: '20+ years in technology leadership and digital transformation.',
       image: '👨‍💼',
