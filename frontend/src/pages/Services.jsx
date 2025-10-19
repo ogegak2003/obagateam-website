@@ -9,7 +9,7 @@ const Services = () => {
       title: 'Web Development',
       description: 'Custom websites and web applications built with modern technologies and best practices.',
       features: ['React & Next.js', 'Responsive Design', 'SEO Optimization', 'E-commerce Solutions', 'CMS Development'],
-      price: 'From $2,500',
+      price: 'From ksh.10,000',
       popular: true
     },
     {
@@ -17,14 +17,14 @@ const Services = () => {
       title: 'Mobile App Development',
       description: 'Native and cross-platform mobile applications for iOS and Android platforms.',
       features: ['iOS & Android', 'React Native', 'Flutter', 'App Store Deployment', 'UI/UX Design'],
-      price: 'From $5,000'
+      price: 'From ksh. 15,000'
     },
     {
       icon: '🛠️',
       title: 'ICT Support & Maintenance',
       description: 'Comprehensive IT support services to keep your systems running smoothly.',
       features: ['24/7 Help Desk', 'System Maintenance', 'Troubleshooting', 'Remote Assistance', 'Security Updates'],
-      price: 'From $500/mo'
+      price: 'From ksh.500/mo'
     },
     {
       icon: '🔗',
@@ -38,7 +38,7 @@ const Services = () => {
       title: 'Cloud Solutions',
       description: 'Cloud migration, management, and optimization services for modern businesses.',
       features: ['AWS & Azure', 'Cloud Migration', 'Cost Optimization', 'Security & Compliance', 'DevOps'],
-      price: 'From $1,000/mo'
+      price: 'From ksh.10,000/mo'
     },
     {
       icon: '🚀',
