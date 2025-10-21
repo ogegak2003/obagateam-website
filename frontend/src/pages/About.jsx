@@ -10,27 +10,15 @@ const About = () => {
       image: '👨‍💼',
       social: { twitter: '#', linkedin: '#' }
     },
+    
     {
-      name: 'Sarah Chen',
-      role: 'CTO',
-      bio: 'Expert in cloud architecture and scalable software solutions.',
-      image: '👩‍💻',
-      social: { twitter: '#', linkedin: '#' }
-    },
-    {
-      name: 'Mike Rodriguez',
+      name: 'OBAGA KEVIN',
       role: 'Head of Development',
       bio: 'Full-stack developer specializing in modern web technologies.',
       image: '👨‍🔧',
       social: { twitter: '#', linkedin: '#' }
     },
-    {
-      name: 'Emily Davis',
-      role: 'UX/UI Lead',
-      bio: 'Creative designer focused on user-centered design principles.',
-      image: '👩‍🎨',
-      social: { twitter: '#', linkedin: '#' }
-    },
+    
     {
       name: 'David Kim',
       role: 'DevOps Engineer',

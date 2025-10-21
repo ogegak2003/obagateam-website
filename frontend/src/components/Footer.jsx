@@ -25,10 +25,10 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               {[
-                { name: 'Twitter', icon: '🐦', url: '#' },
+                { name: 'Twitter', icon: '/icons/x.png', url: '#' },
                 { name: 'LinkedIn', icon: '💼', url: '#' },
                 { name: 'GitHub', icon: '🐙', url: '#' },
-                { name: 'Instagram', icon: '📷', url: '#' },
+                { name: 'Instagram', icon: '/icons/ig.png', url: '#' },
               ].map((social) => (
                 <a
                   key={social.name}

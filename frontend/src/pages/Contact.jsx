@@ -31,8 +31,8 @@ const Contact = () => {
       icon: '📞',
       title: 'Call Us',
       description: 'Mon-Fri from 9am to 6pm',
-      details: '+1 (555) 123-OTTEAM',
-      link: 'tel:+15551234567'
+      details: '+254 748 312 468',
+      link: 'tel:+254 748 312 468'
     },
     {
       icon: '💬',
@@ -45,7 +45,7 @@ const Contact = () => {
       icon: '🏢',
       title: 'Visit Us',
       description: 'Come say hello at our office',
-      details: '123 Innovation Drive, Tech Valley',
+      details: 'Nairobi,Kenya CBD',
       link: '#map-section'
     }
   ];

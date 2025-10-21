@@ -50,14 +50,7 @@ const InteractiveMap = () => {
       phone: '+254 748 312 468', // You can add a specific number here
       email: 'hq@obagaTeam.com'
     },
-    {
-      id: 2,
-      name: 'obagaTeam Europe',
-      position: [51.5074, -0.1278], // London
-      address: '456 Tech Boulevard, London EC1A 1BB, UK',
-      phone: '+44 20 7946 0958',
-      email: 'europe@obagaTeam.com'
-    },
+    
     {
       id: 3,
       name: 'obagaTeam Asia',
